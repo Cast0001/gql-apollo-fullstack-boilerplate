@@ -1,0 +1,74 @@
+// Focus
+
+@mixin focus-shadow {
+  border-color: #0f77ff;
+  box-shadow: 0 0 4px 2px rgba(15, 119, 255, 0.8);
+}
+
+@mixin mouse-focus {
+  :global(.js-focus-visible) &:focus:not(:global(.focus-visible)) {
+    @content;
+  }
+}
+
+@mixin keyboard-focus {
+  :global(.js-focus-visible) &:global(.focus-visible):focus {
+    @content;
+  }
+}
+
+
+// Placeholder
+
+@mixin placeholder {
+  &::placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+}
+
+
+// Disable user select
+
+@mixin no-user-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+// Absolute Centring
+
+@mixin absolute-centring($offset: 0) {
+  position: absolute;
+  top: $offset;
+  right: $offset;
+  bottom: $offset;
+  left: $offset;
+  margin: auto;
+}
+
+@mixin absolute-v-centring {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+
+// Hide Scrollbar
+
+@mixin no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+
+  & {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}

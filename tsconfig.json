@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "module": "commonjs",
+    "target": "ESNext",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "noEmit": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "paths": {
+      "components/*": [ "src/components/*" ],
+      "containers/*": [ "src/containers/*" ],
+      "helpers/*": [ "src/helpers/*" ],
+      "pages/*": [ "src/pages/*" ],
+      "links/*": [ "src/links/*" ],
+      "hooks/*": [ "src/hooks/*" ],
+
+      // Modules
+      "device": [ "modules/device" ],
+      "apollo-client": [ "modules/apollo-client" ],
+      "apollo-client/server": [ "modules/apollo-client/server" ],
+      "request-context": [ "modules/request-context" ]
+    },
+    "typeRoots": [
+      "@types",
+      "./node_modules/@types",
+    ]
+  },
+  "include": [
+    "src/**/*",
+    "server/**/*",
+  ]
+}

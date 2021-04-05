@@ -1,0 +1,92 @@
+root: true
+
+env:
+  browser: true
+  es2021: true
+  node: true
+
+parser: "@typescript-eslint/parser"
+
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 2020
+  sourceType: module
+
+#extends:
+#  - "eslint:recommended"
+#  - "plugin:react/recommended"
+#  - "plugin:@typescript-eslint/recommended"
+
+plugins:
+  - "react"
+  - "react-hooks"
+  - "import"
+  - "@typescript-eslint"
+
+rules:
+
+  # common
+
+  indent:
+    - error
+    - 2
+    - SwitchCase: 1
+  quotes:
+    - error
+    - single
+    - allowTemplateLiterals: true
+  semi:
+    - error
+    - never
+  eqeqeq: 2
+
+  max-len:
+    - error
+    - code: 180
+  linebreak-style:
+    - error
+    - unix
+  no-multiple-empty-lines:
+    - error
+    - max: 2
+      maxEOF: 1
+      maxBOF: 1
+
+  object-curly-spacing:
+    - error
+    - always
+  array-bracket-spacing:
+    - error
+    - always
+
+  comma-dangle:
+    - error
+    - arrays: always-multiline
+      objects: always-multiline
+      imports: always-multiline
+      exports: always-multiline
+      functions: never
+
+  # @typescript-eslint
+
+  "@typescript-eslint/prefer-optional-chain": error
+
+  # "react-hooks" plugin
+
+  react-hooks/rules-of-hooks: error
+  react-hooks/exhaustive-deps: warn
+
+  # "import" plugin
+
+  import/extensions: 0
+  import/no-unresolved: 0
+  import/first: 0
+  import/no-extraneous-dependencies: 0
+  import/newline-after-import:
+    - error
+    - count: 2
+  import/no-dynamic-require: 0
+  import/prefer-default-export: 0
+  import/no-webpack-loader-syntax: 0
+  import/no-named-as-default-member: 1

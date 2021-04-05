@@ -1,0 +1,114 @@
+.root {
+
+  &.focused {
+
+    .input {
+      border-color: $color-black;
+    }
+  }
+
+  &.errored {
+
+    .label {
+      color: $color-red;
+    }
+
+    .input {
+      border-color: $color-red;
+    }
+  }
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  color: $color-gray-80;
+  transition: all 0.13s linear;
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  color: $color-black;
+  background: #fff;
+  border: 1px solid $color-gray-30;
+  border-radius: 4px;
+  appearance: none;
+}
+
+.error {
+  color: $color-red;
+}
+
+
+@include media-mobile {
+
+  .root {
+
+    &.focused,
+    &.filled {
+
+      .label {
+        font-size: vw(12);
+        line-height: vw(16);
+      }
+    }
+  }
+
+  .label {
+    top: vw(5);
+    left: vw(16);
+    font-size: vw(16);
+    line-height: vw(36);
+  }
+
+  .input {
+    padding: vw(16) vw(16) vw(5);
+    font-size: vw(16);
+    line-height: vw(22);
+  }
+
+  .error {
+    margin-top: vw(4);
+    font-size: vw(10);
+    line-height: vw(15);
+  }
+}
+
+@include media-except-mobile {
+
+  .root {
+
+    &.focused,
+    &.filled {
+
+      .label {
+        font-size: 12px;
+        line-height: 15px;
+      }
+    }
+  }
+
+  .label {
+    top: 5px;
+    left: 15px;
+    font-size: 16px;
+    line-height: 36px;
+  }
+
+  .input {
+    padding: 19px 16px 5px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .note,
+  .error {
+    margin-top: 4px;
+    font-size: 10px;
+    line-height: 15px;
+  }
+}

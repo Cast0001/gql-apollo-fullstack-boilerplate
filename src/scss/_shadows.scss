@@ -1,0 +1,6 @@
+$shadow-basic: rgba(0,0,0, 0.15) 0 2px 6px;
+
+
+@mixin basic-drop-shadow {
+  box-shadow: $shadow-basic;
+}
